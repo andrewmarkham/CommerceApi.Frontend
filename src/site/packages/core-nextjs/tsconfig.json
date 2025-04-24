@@ -1,0 +1,62 @@
+{
+    "compilerOptions": {
+      "alwaysStrict": true,
+      "declaration": true,
+      "declarationMap": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "importHelpers": true,
+      "allowSyntheticDefaultImports": true,
+      "allowJs": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "sourceMap": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "target": "ES2017",
+      "useUnknownInCatchVariables": false,
+      "lib": ["es6", "dom"],
+      "downlevelIteration": true,
+      "resolveJsonModule": true,
+      "jsx": "react",
+      "outDir": "./dist",
+      //"types": ["jest", "node", "@testing-library/jest-dom"]
+    },
+  
+  
+  
+  "compilerOptions1": {
+      "target": "es5", // Specifies the JavaScript version to target when transpiling code.
+      //"useDefineForClassFields": true, // Enables the use of 'define' for class fields.
+      "lib": ["es6", "dom"], // Specifies the libraries available for the code.
+      "module": "ESNext", // Defines the module system to use for code generation.
+      "skipLibCheck": true, // Skips type checking of declaration files.
+  
+      /* Bundler mode */
+      "moduleResolution": "bundler", // Specifies how modules are resolved when bundling.
+      "allowImportingTsExtensions": true, // Allows importing TypeScript files with extensions.
+      "resolveJsonModule": true, // Enables importing JSON modules.
+      "isolatedModules": true, // Ensures each file is treated as a separate module.
+      "noEmit": true, // Prevents TypeScript from emitting output files.
+      "jsx": "react", // Configures JSX support for React.
+  
+      /* Linting */
+      "strict": true, // Enables strict type checking.
+      "noUnusedLocals": true, // Flags unused local variables.
+      "noUnusedParameters": true, // Flags unused function parameters.
+      "noFallthroughCasesInSwitch": true, // Requires handling all cases in a switch statement.
+      "declaration": true, // Generates declaration files for TypeScript.
+      "declarationDir": "./dist", // Specifies the output directory for declaration files.
+      "declarationMap": true, // Generates source maps for declaration files.
+    },
+    "include": ["src"], // Specifies the directory to include when searching for TypeScript files.
+    "exclude": [
+      "src/**/__docs__","src/**/__test__"
+    ]
+  }

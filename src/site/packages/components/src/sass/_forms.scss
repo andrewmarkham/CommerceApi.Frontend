@@ -1,0 +1,112 @@
+@use './components/core';
+
+form.formContainer {
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    div.fieldWrapper {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    div.fieldGroup {
+        position: relative;
+
+        border: 1px solid var(--j-input-border);
+        border-radius: 3px;
+
+        padding: 5px 10px;;
+        margin: 10px 0;
+
+        &.nolabel {
+            margin-top: -5px;
+
+            input {
+                margin-top: 0.25rem;
+            }
+        }
+
+        &:focus-within {
+            border-color: var(--j-input-border-focus);
+            border-width: 2px;
+        }
+
+        ~ span.input_error {
+            display: none;
+            color: var(--j-input-border-error);
+            //visibility: hidden;
+            font-size: 0.8rem;
+            margin-left: 10px;;
+        }
+
+        &:has(input:not(:focus):user-invalid) {
+            border-color: var(--j-input-border-error);
+
+            ~ span.input_error {
+                display: block;
+            }
+        }
+    }
+
+    label {
+        position:absolute;
+        top:-9px;
+        left:10px;
+        background-color:white;
+
+        font-size: 12px;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+
+        span.required {
+            &::after {
+                content: '*';
+                color: var(--j-form-required);
+                margin-left: 0.25rem;
+                margin-right: 0.25px;
+            }
+        }
+    }
+
+    input,select {
+
+        width: 100%;
+
+        font-size: 0.8rem;
+        color: var(--j-text-light);
+        background-color: white;
+        
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        @extend %button;
+        margin-left: 0.5rem;
+        border-radius: 4px;;
+    }
+
+    fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        margin-top: 1rem;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        legend {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .flex-gap {
+        gap: 0.5rem;
+    }
+}

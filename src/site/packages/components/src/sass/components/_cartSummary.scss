@@ -1,0 +1,109 @@
+@use './core';
+
+.cartSummary {
+    //border: 1px solid var(--j-button-border);
+
+    .cartSummaryLine {
+        
+        margin-bottom: 0.25rem;
+        max-width: 25rem;
+
+        img {
+            margin-right: 0.25rem;
+        }
+
+        h3 {
+            font-size: 0.8rem;
+        }
+
+        span.qty {
+            font-size: 0.75rem;
+            color: var(--j-text-light);
+        }
+
+        p {
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+    }
+
+    .cartSummaryDiscount {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+
+        font-size: 0.8rem;
+        color: var(--j-text-light);
+
+        border-top: 1px solid var(--j-input-border);
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            display: inline-block;
+            border: 1px solid var(--j-input-border);
+            padding: 0.5rem;
+        }
+
+        button {
+            @extend %button;
+            margin-left: 0.5rem;
+            border-radius: 4px;;
+        }
+
+        form {
+            display: flex;
+        }
+
+        span.error {
+            color: var( --j-text-error);
+            margin-top: 0.25rem;
+        }
+
+        div.coupons {
+            margin-top: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        a.coupon-pill {
+            display: flex;
+            flex-direction: row;
+            background-color: var(--j-button-bg);
+            color: var(--j-button-text);
+            padding: 0.25rem 0.5rem;
+            border-radius: 2px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.25rem;
+            align-items: center;
+
+            cursor:pointer;
+            &:hover {
+                background-color: var(--j-button-bg-hover);
+            }
+        }
+    }
+
+    .cartSummaryTotal {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+
+        color: var(--j-text-light);
+
+        border-top: 1px solid var(--j-input-border);
+    }
+
+    .cartSummaryRow {
+        width: 100%;
+        color: var(--j-text-light);
+
+        &.total {
+            font-weight: 700;
+            color: var(--j-text);
+            padding-top: 0.5rem;
+        }
+    }
+
+
+}

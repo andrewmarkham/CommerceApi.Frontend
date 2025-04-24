@@ -1,0 +1,47 @@
+.flex {
+    display: flex;
+
+    &.row {
+        flex-direction: row;
+    }
+
+    &.col {
+        flex-direction: column;
+    }
+
+    .items-start {
+        align-items: flex-start;
+    }
+
+    .items-end {
+        align-items: flex-end;
+    }
+
+    .items-center {
+        align-items: center;
+    }
+
+    .items-stretch {
+        align-items: stretch;
+    }
+
+    .items-baseline {
+        align-items: baseline;
+    }
+}
+
+.flex-0 {
+    flex: 0 0 auto;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.grow {
+    flex-grow: 1;
+}

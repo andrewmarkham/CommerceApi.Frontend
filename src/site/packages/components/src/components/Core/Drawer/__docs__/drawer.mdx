@@ -1,0 +1,35 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as Drawer from "./drawer.stories.tsx";
+
+<Meta of={Drawer} title="Drawer" />
+
+# Drawer
+
+Drawer panel that slides in from the side
+
+#### Example
+
+<Canvas of={Drawer.Primary} />
+
+## Usage
+
+```ts
+import { Drawer } from '@jhoose-commerce/components';
+
+
+const Example = () => {
+  return (
+      <Drawer heading="Your Cart" show={showDrawer} close={() => setShowDrawer(false)}>
+        ...
+      </Drawer>
+  );
+};
+
+export default Example;
+```
+
+#### Arguments
+
+- **heading** _ Heading for the drawer.
+- **show** _ show/hide the drawer.
+- **close** - A function that is called when the close button is clicked.

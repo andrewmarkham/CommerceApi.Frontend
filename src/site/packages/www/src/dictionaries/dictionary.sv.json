@@ -1,0 +1,114 @@
+{
+    "navigation": {
+        "logo": "Logotyp",
+        "products": "Produkter",
+        "about": "Om oss"
+    },
+    "minicart": {
+        "heading": "Din kundvagn",
+        "total": "Totalt :",
+        "subTotal": "Delsumma :",
+        "orderDiscount": "Rabatt på beställning :",
+        "updateQuantity": "Uppdatera kvantitet",
+        "emptyCart": "Din kundvagn är tom",
+        "remove": "Ta bort",
+        "checkout": "Gå till kassan"
+    },
+    "cartSummary": {
+        "total": "Totalt :",
+        "subTotal": "Delsumma :",
+        "orderDiscount": "Rabatt på beställning :",
+        "shippingTotal": "Fraktkostnad :",
+        "shippingDiscount": "Rabatt på frakt :",
+        "taxTotal": "Skatt :",
+        "qty": "Antal :",
+        "discountLabel": "Rabatt",
+        "discountPlaceholder": "Ange rabattkod",
+        "discountApply": "Tillämpa"
+    },
+    "checkout": {
+        "contactDetails": {
+            "sectionHeading": "Kontaktuppgifter",
+            "heading": "Kontaktuppgifter",
+            "summaryText": "Ange dina kontaktuppgifter",
+            "buttonLabel": "Fortsätt till leverans"
+        },
+        "email": {
+            "label": "E-post",
+            "placeholder": "Ange e-post",
+            "errorMessage": "Ange en giltig e-postadress"
+        },
+        "phone": {
+            "label": "Telefon",
+            "placeholder": "Ange telefonnummer",
+            "errorMessage": "Ange ett giltigt telefonnummer"
+        },
+        "deliveryAddressHeading": "Leveransadress",
+        "firstName": {
+            "label": "Förnamn",
+            "placeholder": "",
+            "errorMessage": "Ange ett värde"
+        },
+        "lastName": {
+            "label": "Efternamn",
+            "placeholder": "Ange efternamn",
+            "errorMessage": "Ange ett värde"
+        },
+        "address": {
+            "line1": {
+                "label": "Adress",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "line2": {
+                "label": "Adress rad 2",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "line3": {
+                "label": "Adress rad 3",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "city": {
+                "label": "Stad",
+                "placeholder": "",
+                "errorMessage": "Ange ett värde"
+            },
+            "postcode": {
+                "label": "Postnummer",
+                "placeholder": "",
+                "errorMessage": "Ange ett värde"
+            },
+            "state": {
+                "label": "Län",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "country": {
+                "label": "Land",
+                "placeholder": "",
+                "errorMessage": "Ange ett värde"
+            }
+        },
+        "shippingMethod": {
+            "sectionHeading": "Leverans",
+            "heading": "Fraktmetod",
+            "summaryText": "Välj en fraktmetod",
+            "buttonLabel": "Fortsätt till betalning",
+            "instructions": "Ange din adress för att se tillgängliga fraktmetoder"
+        },
+        "payment": {
+            "sectionHeading": "Betalning",
+            "heading": "Fraktmetod",
+            "summaryText": "Ange dina betalningsuppgifter",
+            "buttonLabel": "Genomför betalning"
+        }
+    },
+    "addToCart": {
+        "addToCart": "Lägg till i kundvagn"
+    },
+    "market": {
+        "heading": "Välj din marknad"
+    }
+}

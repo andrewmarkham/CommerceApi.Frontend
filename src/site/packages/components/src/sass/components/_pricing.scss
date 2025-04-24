@@ -1,0 +1,40 @@
+@use './core';
+
+.productPrice {
+    div.discount {
+        @extend %text-sm;
+        color: var(--j-text-light);
+
+        &.price {
+            text-decoration: line-through;
+        }
+    }
+
+    div.priceDetails {
+        @extend %text-lg;
+        font-weight: 700;
+    }
+
+    div.discountSummary {
+        @extend %text-sm;
+        color: var(--j-text-light);
+    }
+
+    span.from {
+        color: var(--j-text-light);
+    }
+}
+
+.price {
+    font-weight: normal;
+
+    span.label {
+        color: var(--j-text);
+    }
+}
+
+.discount {
+    //text-zinc-500 line-through
+    color: var(--j-text-light);
+    text-decoration: line-through;;
+}

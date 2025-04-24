@@ -1,0 +1,46 @@
+{
+  "name": "www",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --experimental-https",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "codegen": "graphql-codegen --watch"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.12.7",
+    "@apollo/experimental-nextjs-app-support": "^0.12.1",
+    "@auth0/nextjs-auth0": "^4.4.2",
+    "@jhoose-commerce/core": "^1.0.0",
+    "@jhoose-commerce/components": "^1.0.3",
+    "@jhoose-commerce/stripe-payment": "^1.0.0",
+    "@jhoose-commerce/core-nextjs": "^1.0.2",
+    "@stripe/react-stripe-js": "^3.6.0",
+    "@stripe/stripe-js": "^7",
+    "@tailwindcss/typography": "^0.5.16",
+    "graphql": "^16.10.0",
+    "html-react-parser": "^5.2.3",
+    "next": "15.2.4",
+    "next-range-slider": "^2.0.1",
+    "react-cookie": "^8.0.1",
+    "react-dom": "^19",
+    "stripe": "^18"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/client-preset": "^4.8.0",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-operations": "^4.6.0",
+    "@parcel/watcher": "^2.5.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9.24.0",
+    "eslint-config-next": "15.3.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.8.3"
+  }
+}

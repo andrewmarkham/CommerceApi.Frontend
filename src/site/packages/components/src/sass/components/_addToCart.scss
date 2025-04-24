@@ -1,0 +1,27 @@
+@use './core';
+
+.addToCart {
+    @extend %button;
+    @extend %drop-shadow;
+
+    display: inline-flex;
+    align-items: center;
+
+    span.pl-4 {
+        padding-left: 1rem;
+    }
+
+    span.title {
+        text-align: left;
+    }
+
+    svg.svg {
+        width: 1.25rem;
+        height: 1.25rem; 
+        stroke: var(--j-svg-stroke);   
+    }
+
+    svg.error {
+        stroke: var(--j-svg-stroke-error);
+    }
+}

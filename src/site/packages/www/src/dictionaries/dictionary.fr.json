@@ -1,0 +1,114 @@
+{
+    "navigation": {
+        "logo": "Logo",
+        "products": "Produits",
+        "about": "À propos"
+    },
+    "minicart": {
+        "heading": "Votre Panier",
+        "total": "Total :",
+        "subTotal": "Sous-total :",
+        "orderDiscount": "Remise sur la commande :",
+        "updateQuantity": "Mettre à jour la quantité",
+        "emptyCart": "Votre panier est vide",
+        "remove": "Supprimer",
+        "checkout": "Aller à la caisse"
+    },
+    "cartSummary": {
+        "total": "Total :",
+        "subTotal": "Sous-total :",
+        "orderDiscount": "Remise sur la commande :",
+        "shippingTotal": "Total livraison :",
+        "shippingDiscount": "Remise sur la livraison :",
+        "taxTotal": "Total des taxes :",
+        "qty": "Quantité :",
+        "discountLabel": "Remise",
+        "discountPlaceholder": "Entrer le code de remise",
+        "discountApply": "Appliquer"
+    },
+    "checkout": {
+        "contactDetails": {
+            "sectionHeading": "Coordonnées",
+            "heading": "Coordonnées",
+            "summaryText": "Entrez vos coordonnées",
+            "buttonLabel": "Continuer vers la livraison"
+        },
+        "email": {
+            "label": "E-mail",
+            "placeholder": "Entrer l'e-mail",
+            "errorMessage": "Veuillez entrer une adresse e-mail valide"
+        },
+        "phone": {
+            "label": "Téléphone",
+            "placeholder": "Entrer le téléphone",
+            "errorMessage": "Veuillez entrer un numéro de téléphone valide"
+        },
+        "deliveryAddressHeading": "Adresse de livraison",
+        "firstName": {
+            "label": "Prénom",
+            "placeholder": "",
+            "errorMessage": "Veuillez entrer une valeur"
+        },
+        "lastName": {
+            "label": "Nom",
+            "placeholder": "Entrer le nom",
+            "errorMessage": "Veuillez entrer une valeur"
+        },
+        "address": {
+            "line1": {
+                "label": "Adresse",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "line2": {
+                "label": "Adresse Ligne 2",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "line3": {
+                "label": "Adresse Ligne 3",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "city": {
+                "label": "Ville",
+                "placeholder": "",
+                "errorMessage": "Veuillez entrer une valeur"
+            },
+            "postcode": {
+                "label": "Code postal",
+                "placeholder": "",
+                "errorMessage": "Veuillez entrer une valeur"
+            },
+            "state": {
+                "label": "État",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "country": {
+                "label": "Pays",
+                "placeholder": "",
+                "errorMessage": "Veuillez entrer une valeur"
+            }
+        },
+        "shippingMethod": {
+            "sectionHeading": "Livraison",
+            "heading": "Mode de livraison",
+            "summaryText": "Sélectionnez un mode de livraison",
+            "buttonLabel": "Continuer vers le paiement",
+            "instructions": "Veuillez entrer votre adresse pour voir les modes de livraison disponibles"
+        },
+        "payment": {
+            "sectionHeading": "Paiement",
+            "heading": "Mode de livraison",
+            "summaryText": "Entrez vos informations de paiement",
+            "buttonLabel": "Effectuer le paiement"
+        }
+    },
+    "addToCart": {
+        "addToCart": "Ajouter au panier"
+    },
+    "market": {
+        "heading": "Sélectionnez votre marché"
+    }
+}

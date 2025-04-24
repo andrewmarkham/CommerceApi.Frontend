@@ -1,0 +1,114 @@
+{
+    "navigation":{
+        "logo": "Logo",
+        "products": "Products",
+        "about": "About"
+    },
+    "minicart": {
+        "heading": "Your Cart",
+        "total": "Total :",
+        "subTotal": "Sub Total :",
+        "orderDiscount": "Order Discount :",
+        "updateQuantity": "Update Quantity",
+        "emptyCart": "Your cart is empty",
+        "remove": "Remove",
+        "checkout": "Go to Checkout"
+    },
+    "cartSummary": {
+        "total": "Total :",
+        "subTotal": "Sub Total :",
+        "orderDiscount": "Order Discount :",
+        "shippingTotal": "Shipping Total :",
+        "shippingDiscount": "Shipping Discount :",
+        "taxTotal": "Tax Total :",
+        "qty": "Qty :",
+        "discountLabel": "Discount",
+        "discountPlaceholder": "Enter Discount Code",
+        "discountApply": "Apply"
+    },
+    "checkout": {
+        "contactDetails": {
+            "sectionHeading": "Contact Details",
+            "heading": "Contact Details",
+            "summaryText": "Enter contact details",
+            "buttonLabel": "Contine to Delivery"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "Enter Email",
+            "errorMessage": "Please enter a valid email address"
+        },
+        "phone": {
+            "label": "Phone",
+            "placeholder": "Enter Phone",
+            "errorMessage": "Please enter a valid phone number"
+        },
+        "deliveryAddressHeading": "Delivery Address",
+        "firstName": {
+            "label": "First Name",
+            "placeholder": "",
+            "errorMessage": "Please enter a value"
+        },
+        "lastName": {
+            "label": "Last Name",
+            "placeholder": "Enter Last Name",
+            "errorMessage": "Please enter a value"
+        },
+        "address": {
+            "line1": {
+                "label": "Address",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "line2": {
+                "label": "Address Line 2",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "line3": {
+                "label": "Address Line 3",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "city": {
+                "label": "City",
+                "placeholder": "",
+                "errorMessage": "Please enter a value"
+            },
+            "postcode": {
+                "label": "Postcode",
+                "placeholder": "",
+                "errorMessage": "Please enter a value"
+            },
+            "state": {
+                "label": "State",
+                "placeholder": "",
+                "errorMessage": ""
+            },
+            "country": {
+                "label": "Country",
+                "placeholder": "",
+                "errorMessage": "Please enter a value"
+            }
+        },
+        "shippingMethod": {
+            "sectionHeading": "Delivery",
+            "heading": "Shipping Method",
+            "summaryText": "Select a shipping method",
+            "buttonLabel": "Continue to Payment",
+            "instructions": "Please enter your address to see available shipping methods"
+        },
+        "payment": {
+            "sectionHeading": "Payment",
+            "heading": "Shipping Method",
+            "summaryText": "Enter your payment details",
+            "buttonLabel": "Take Payment"
+        }
+    },
+    "addToCart": {
+        "addToCart": "Add to Cart"
+    },
+    "market":{
+        "heading": "Select your market"
+    }
+}

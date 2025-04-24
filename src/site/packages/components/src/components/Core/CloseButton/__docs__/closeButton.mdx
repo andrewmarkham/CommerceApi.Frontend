@@ -1,0 +1,35 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as CloseButton from "./closeButton.stories.tsx";
+
+<Meta of={CloseButton} title="Close Button" />
+
+# Close Button
+
+Close Button component with different props.
+
+#### Example
+
+<Canvas of={CloseButton.Primary} />
+
+## Usage
+
+```ts
+import CloseButton from "../../CloseButton/closeButton";
+
+const Example = () => {
+  return (
+      <CloseButton
+        title={title}
+        onClick={onClick}
+      />
+  );
+};
+
+export default Example;
+```
+
+#### Arguments
+
+- **text** _`() => void`_ - A string that represents the text content of the button.
+- **onClick** - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element.

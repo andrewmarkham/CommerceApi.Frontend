@@ -1,0 +1,49 @@
+.drawerHeader {
+    //flex-0 flex flex-row bg-zinc-100 p-4
+    //width: 100%;
+    padding: 1rem;
+    background-color: var(--j-drawer-bg);
+
+    h2 {
+        width: 100%;
+    }
+}
+
+.drawerContents {
+    //grow flex flex-col min-h-0 overflow-auto overscroll-none
+    min-height: 0;
+
+    overflow: auto;
+    overscroll-behavior: none;
+}
+
+.drawerContainer {
+    //h-full fixed top-0 bottom-0 right-0 w-[32rem] bg-zinc-50 z-[100] shadow-xl 
+    //delay-400 duration-500 ease-in-out transition-all transform;
+
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 32rem;
+
+    background-color: var(--j-drawer-bg);
+    z-index: 100;
+
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    
+    transition-duration: 400ms;
+
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    &.closed {
+        transform: translateX(100%);
+    }
+}

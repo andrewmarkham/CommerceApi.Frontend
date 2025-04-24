@@ -1,0 +1,35 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as ProductPrice from "./ProductPrice.stories.tsx";
+
+<Meta of={ProductPrice} title="Product Price " />
+
+# Product Price
+
+Product Price 
+
+#### Example
+
+<Canvas of={ProductPrice.Simple} />
+
+## Usage
+
+```ts
+import { ProductPrice } from '@jhoose-commerce/components';
+
+
+const Example = () => {
+  return (
+      <Drawer heading="Your Cart" show={showDrawer} close={() => setShowDrawer(false)}>
+        ...
+      </Drawer>
+  );
+};
+
+export default Example;
+```
+
+#### Arguments
+
+- **heading** _ Heading for the drawer.
+- **show** _ show/hide the drawer.
+- **close** - A function that is called when the close button is clicked.

@@ -1,0 +1,54 @@
+{
+  "name": "@jhoose-commerce/stripe-payment",
+  "version": "1.0.5",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
+    "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
+    "build": "tsc && vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "stripe": "^18",
+    "react": ">=19.0.0",
+    "react-dom": "^19.0.0",
+    "@jhoose-commerce/core": "^1.0.1",
+    "@jhoose-commerce/components": "^1.0.4"
+  },
+  "devDependencies": {
+
+    "@types/react": "^19.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "sass": "^1.86.3",
+    "sass-embedded": "^1.86.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.6",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "dependencies": {
+
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

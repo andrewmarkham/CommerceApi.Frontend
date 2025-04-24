@@ -1,0 +1,35 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as MiniCart from "./MiniCart.stories.tsx";
+
+<Meta of={MiniCart} title="Mini Cart" />
+
+# MiniCart
+
+Mini Cart 
+
+#### Example
+
+<Canvas of={MiniCart.Primary} />
+
+## Usage
+
+```ts
+import { AddToCart } from '@jhoose-commerce/components';
+
+
+const Example = () => {
+  return (
+      <Drawer heading="Your Cart" show={showDrawer} close={() => setShowDrawer(false)}>
+        ...
+      </Drawer>
+  );
+};
+
+export default Example;
+```
+
+#### Arguments
+
+- **heading** _ Heading for the drawer.
+- **show** _ show/hide the drawer.
+- **close** - A function that is called when the close button is clicked.

@@ -1,0 +1,40 @@
+:root {
+ 
+    --j-text: #232323;
+    --j-text-light: #848484;
+    --j-text-error: #D92020;
+
+    --j-button-text: #222121;
+    --j-button-bg: #B6B4B4;
+    --j-button-border: #757575;
+
+    --j-button-bg-hover: #999898;
+    --j-button-border-hover: #6F6F6F;
+
+    --j-button-disabled-text: #919191;
+    --j-button-disabled-bg: #D9D9D9;
+    --j-button-disabled-border: #BFBABA;
+
+    --j-button-error-text: #D92020;
+    --j-button-error-bg: #F88181;
+    --j-button-error-border: #ff8f8f;
+
+    --j-button-error-bg-hover: #F88181;
+    --j-button-error-border-hover: #ff8f8f;
+
+    --j-svg-stroke: #222121;
+    --j-svg-stroke-disabled: #919191;
+    --j-svg-stroke-error: #D92020;
+
+    --j-drawer-bg: rgb(244, 244, 245);
+
+    --j-minicart-bg: #fff;
+    --j-minicart-item-border : #e5e7eb;
+    
+    --j-input-border: #e5e7eb;
+    --j-input-border-error: #ff8f8f;
+    --j-input-border-focus: #435bf7;
+    --j-form-required: #ff8f8f;
+
+    --j-checkout-step-border: #e5e7eb;
+}
