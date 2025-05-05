@@ -3,6 +3,7 @@
 import { AuthenticationContextType, CART_LOCAL_STORAGE_KEY, CUSTOMER_CONTEXT_COOKIE, REMOVE_CART_COOKIE, removeStorageItem } from '@jhoose-commerce/core';
 import {createContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
+import { CartProvider } from '@providers/CartProvider';
 
 const JhooseCommerceContext = createContext<AuthenticationContextType>({ isAnonymous: true, token: "", customerContext: "", endpoint: "" });
 
@@ -29,7 +30,9 @@ const JhooseCommerceProvider = (props : {children :React.ReactNode}) => {
             customerContext: customerContext?.customerContext,
             endpoint: customerContext?.endpoint
             }}>
-            {props.children}
+            <CartProvider>
+              {props.children}
+            </CartProvider>
         </JhooseCommerceContext.Provider>
 
       </>

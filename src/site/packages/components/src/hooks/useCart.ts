@@ -8,11 +8,13 @@ import {
 } from "@jhoose-commerce/core";
 
 import useJhooseCommerce from "./useJhooseCommerce";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Logger } from "@helpers/logging";
+import { CartContext } from "@providers/CartProvider";
 
 interface useCartProps {
   cart: Cart | null;
+  setCart: React.Dispatch<React.SetStateAction<Cart | null>>;
   marketContext: MarketContextType;
   addToCart: (items: [{ sku: string; qty: number }]) => Promise<CartApiResponse | undefined>;
   removeLineFromCart: (sku: string) => Promise<CartApiResponse | undefined>;
@@ -32,8 +34,8 @@ export interface CartApiResponse {
 }
 
 export function useCart(dependencies?: any[]): useCartProps {
-  const [innerCart, setInnerCart] = useState<Cart | null>(null);
 
+  const {cart, setCart} = useContext(CartContext);
   const { client, marketContext } = useJhooseCommerce();
 
   useEffect(() => {
@@ -43,7 +45,7 @@ export function useCart(dependencies?: any[]): useCartProps {
       if (response && "message" in response) {
         alert(response?.message);
       } else {
-        setInnerCart(response || null);
+        setCart(response || null);
       }
     };
 
@@ -51,13 +53,14 @@ export function useCart(dependencies?: any[]): useCartProps {
   }, [...(dependencies ?? [])]);
 
   return {
-    cart: innerCart,
+    cart: cart,
+    setCart: setCart,
     marketContext: marketContext,
     addToCart: async (items: [{ sku: string; qty: number }]) => {
 
-      var cartId = innerCart?.id ?? 0;
+      var cartId = cart?.id ?? 0;
 
-      if (innerCart === null) {
+      if (cart === null) {
 
         // create a new cart as none exists for the user
         const newCartResponse = await client()?.cart.getDefaultCart(true);
@@ -79,23 +82,23 @@ export function useCart(dependencies?: any[]): useCartProps {
       return handleResponse("addToCart", response);
     },
     removeLineFromCart: async (sku: string) => {
-      if (innerCart === null) {
+      if (cart === null) {
         return;
       }
       var response = await client()?.cart.removeLineFromCart(
-        innerCart.id,
+        cart.id,
         sku
       );
 
       return handleResponse("removeLineFromCart", response);
     },
     updateCartLine: async (lineId: number, sku: string, quantity: number) => {
-      if (innerCart === null) {
+      if (cart === null) {
         return;
       }
 
       var request = {
-        cartId: innerCart.id,
+        cartId: cart.id,
         lineId: lineId,
         sku: sku,
         qty: quantity,
@@ -106,24 +109,24 @@ export function useCart(dependencies?: any[]): useCartProps {
       return handleResponse("updateCartLine", response);
     },
     addCoupon: async (couponCode: string) => {
-      if (innerCart === null) {
+      if (cart === null) {
         return;
       }
 
       var response = await client()?.cart.addCoupon({
-        cartId: innerCart.id,
+        cartId: cart.id,
         couponCode: couponCode,
       });
 
       return handleResponse("addCoupon", response);
     },
     removeCoupon: async (couponCode: string) => {
-      if (innerCart === null) {
+      if (cart === null) {
         return;
       }
 
       var response = await client()?.cart.removeCoupon({
-        cartId: innerCart.id,
+        cartId: cart.id,
         couponCode: couponCode,
       });
 
@@ -146,7 +149,7 @@ export function useCart(dependencies?: any[]): useCartProps {
           errors: [response.errors[0].message[0]],
         }
       } else {
-        setInnerCart(response.cart);
+        setCart(response.cart);
 
         return {
           cart: response.cart,

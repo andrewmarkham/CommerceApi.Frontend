@@ -3,11 +3,12 @@ import { AddShippingMethodRequest, Cart, Shipment } from "@jhoose-commerce/core"
 import { useMemo } from "react";
 
 import { StripeCheckoutStepProps } from "./types";
-import { CheckoutStep, formatPrice, ShippingMethods, useJhooseCommerce } from "@jhoose-commerce/components";
+import { CheckoutStep, formatPrice, ShippingMethods, useCart, useJhooseCommerce } from "@jhoose-commerce/components";
 
 export const StripeCheckoutShippingMethodStep = (props: StripeCheckoutStepProps) => {
 
     const { client } = useJhooseCommerce();
+    const { setCart }  = useCart();
 
     const shipment = props.cart?.forms[0]?.shipments[0] as Shipment;
 
@@ -55,7 +56,14 @@ export const StripeCheckoutShippingMethodStep = (props: StripeCheckoutStepProps)
             methodId: shippingMethodId
         } as AddShippingMethodRequest;
 
-        await client()?.checkout.setShippingMethod(request);
+        var response = await client()?.checkout.setShippingMethod(request);
+
+        if (response && "message" in response) {
+            alert(response?.message);
+        }
+        else {
+            setCart(response?.cart as Cart);
+        }
 }
 }
 

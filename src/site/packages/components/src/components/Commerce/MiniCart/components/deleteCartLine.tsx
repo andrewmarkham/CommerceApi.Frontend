@@ -5,7 +5,7 @@ import { MiniCartLabelProps } from "../minicart";
 import useCart from "@hooks/useCart";
 import { toast } from "react-toastify";
 
-export const DeleteCartLine = (props: { line: CartLine; cart: Cart; labels: MiniCartLabelProps; onCartUpdated: () => void; }) => {
+export const DeleteCartLine = (props: { line: CartLine; cart: Cart; labels: MiniCartLabelProps; }) => {
 
     const{ removeLineFromCart } = useCart();
 
@@ -17,8 +17,7 @@ export const DeleteCartLine = (props: { line: CartLine; cart: Cart; labels: Mini
                 if (r?.hasErrors) {
                     toast(r.errors[0]);
                 }
-            })
-            .finally(() => props.onCartUpdated());
+            });
     }
 
     return (

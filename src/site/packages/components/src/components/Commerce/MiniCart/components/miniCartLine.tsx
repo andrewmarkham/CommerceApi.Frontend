@@ -11,13 +11,12 @@ export type MiniCartLineProps = {
     line :CartLine,
     cart: Cart,
     locale: string,
-    labels: MiniCartLabelProps,
-    onCartUpdated: () => void
+    labels: MiniCartLabelProps
 }
 
 export const MiniCartLine = (props: MiniCartLineProps) => {
 
-    const { locale, line, cart, onCartUpdated } = props;
+    const { locale, line, cart } = props;
 
     var quotedPrice = line.discountedPrice / line.qty;
 
@@ -37,9 +36,9 @@ export const MiniCartLine = (props: MiniCartLineProps) => {
                     }
                 </p>
                 <FlexContainer direction="row" alignItems="items-end" className="controls">
-                    <Quantity line={line} cart={cart} onCartUpdated={onCartUpdated} labels={props.labels} />
+                    <Quantity line={line} cart={cart} labels={props.labels} />
                     <div className="deleteContainer">
-                        <DeleteCartLine line={line} cart={cart} onCartUpdated={onCartUpdated} labels={props.labels} />
+                        <DeleteCartLine line={line} cart={cart} labels={props.labels} />
                     </div>
                 </FlexContainer>
             </FlexContainer>

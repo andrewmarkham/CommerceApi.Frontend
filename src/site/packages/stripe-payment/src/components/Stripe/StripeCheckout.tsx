@@ -19,15 +19,13 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY ?? ""
 
 export const StripeCheckout = (props: CheckoutProps) => {
 
-    const [ reloadCart, setReloadCart ] =  useState(false);
     const [ currentStep, setCurrentStep ] = useState(1);
-    const { cart } = useCart([reloadCart]);
+    const { cart } = useCart();
     const { marketContext } = useJhooseCommerce();
     const [amount, setAmount] = useState(0);
 
     async function proceedToStep(step: number) {
         setCurrentStep(step);
-        setReloadCart(!reloadCart);
     }
 
     function handleOnChange(e: PanelChangeEvent) {
@@ -40,7 +38,6 @@ export const StripeCheckout = (props: CheckoutProps) => {
     }
 
     function handleDataChange() {
-        setReloadCart(!reloadCart);
         //setAmount((cart?.totalPrice ?? 0) * 100);
     }
 

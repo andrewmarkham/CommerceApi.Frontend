@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import { MergeAllCartLines } from "./utils";
 import { EmptyCart } from "./components/emptyCart";
@@ -39,9 +39,7 @@ const defaultLabels ={
 }
 
 const MiniCart = (props: MiniCartProps) => {
-
-    const [ reloadCart, setReloadCart ] =  useState(false);
-    const { cart } = useCart([props.show, reloadCart]);
+    const { cart } = useCart();
 
     const { marketContext } = useJhooseCommerce();
 
@@ -57,7 +55,7 @@ const MiniCart = (props: MiniCartProps) => {
             {cart && allLines.length> 0 ? 
                 <FlexContainer direction="col" className="grow miniCartContent">
                     <div className="flex-1 miniCartItems" >
-                        <MiniCartItems cart={cart} items={allLines} locale={marketContext.language} labels={labels} onCartUpdated={() => setReloadCart(!reloadCart)} />
+                        <MiniCartItems cart={cart} items={allLines} locale={marketContext.language} labels={labels} />
                     </div> 
                     <div className="flex-none">
                         { cart &&

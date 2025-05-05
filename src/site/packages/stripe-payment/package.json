@@ -1,6 +1,6 @@
 {
   "name": "@jhoose-commerce/stripe-payment",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -22,7 +22,7 @@
     "react": ">=19.0.0",
     "react-dom": "^19.0.0",
     "@jhoose-commerce/core": "^1.0.1",
-    "@jhoose-commerce/components": "^1.0.4"
+    "@jhoose-commerce/components": "^1.0.7"
   },
   "devDependencies": {
 

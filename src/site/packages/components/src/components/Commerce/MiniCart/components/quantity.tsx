@@ -15,14 +15,13 @@ import { toast } from "react-toastify";
 export type QuantityProps = {
     line :CartLine,
     cart: Cart,
-    labels: MiniCartLabelProps,
-    onCartUpdated: () => void
+    labels: MiniCartLabelProps
 }
 
 export const Quantity = (props: QuantityProps) => {
 
     const { marketContext } = useJhooseCommerce();
-    const { line, cart, onCartUpdated } = props;
+    const { line, cart } = props;
 
     const [busy, setBusy] = useState(false);
 
@@ -43,7 +42,6 @@ export const Quantity = (props: QuantityProps) => {
                 }
             })
             .finally(() => {
-                onCartUpdated(); 
                 setBusy(false)
             });    
     }

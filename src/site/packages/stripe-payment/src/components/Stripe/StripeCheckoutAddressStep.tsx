@@ -1,14 +1,15 @@
 
 import { StripeShippingAddress } from "./StripeShippingAddress";
-import { AddShippingAddressRequest, CommerceAddress } from "@jhoose-commerce/core";
+import { AddShippingAddressRequest, Cart, CommerceAddress } from "@jhoose-commerce/core";
 import { useMemo, useState } from "react";
 
 import { StripeCheckoutStepProps, StripeShippingAddressEvent } from "./types";
-import { CheckoutStep, useJhooseCommerce } from "@jhoose-commerce/components";
+import { CheckoutStep, useCart, useJhooseCommerce } from "@jhoose-commerce/components";
 
 export const StripeCheckoutAddressStep = (props: StripeCheckoutStepProps) => {
 
     const { client } = useJhooseCommerce();
+    const { setCart }  = useCart();
     const [address, setAddress] = useState<CommerceAddress | null>(props.cart?.forms[0]?.shipments[0]?.shippingAddress);
 
     const [, setIsDirty] = useState(false);
@@ -52,7 +53,13 @@ export const StripeCheckoutAddressStep = (props: StripeCheckoutStepProps) => {
             address: address,
         } as AddShippingAddressRequest;
 
-        await client()?.checkout.setShippingAddress(request);
+        var response = await client()?.checkout.setShippingAddress(request);
+        if (response && "message" in response) {
+            alert(response?.message);
+        }
+        else {
+            setCart(response?.cart as Cart);
+        }
         setIsDirty(false);
         props.onDataChange();
     }
