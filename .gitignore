@@ -1,3 +1,4 @@
 src/site/node_modules/**
 src/site/**/dist/**
 src/site/**/storybook-static/**
+src/site/packages/core/node_modules/.vite/results.json

@@ -4,8 +4,6 @@ import { JhooseCommerceClient, AddToCartRequest, AnonymousAuthenticationResponse
 import { AuthenticationContextType, Cart, MarketContextType } from '@jhoose-commerce/core';
 
 import { AddShipmentRequest, AddShippingAddressRequest, AddShippingMethodRequest, RemoveShipmentRequest, ShippingMethodRequest, ShippingMethodsResponse, SplitShipmentRequest } from '../../../src/types/checkout';
-import { assert } from 'chai';
-import { aw } from 'vitest/dist/chunks/reporters.nr4dxCkA.js';
 
 describe('JhooseCommerceCheckout', () => {
     
