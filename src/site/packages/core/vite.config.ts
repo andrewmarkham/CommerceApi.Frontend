@@ -4,7 +4,6 @@ import { peerDependencies } from "./package.json";
 import { loadEnv } from 'vite'
 
 export default defineConfig({
-  
   build: {
     lib: {
       entry: "./src/index.ts", // Specifies the entry point for building the library.

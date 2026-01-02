@@ -122,7 +122,7 @@ export type Cart = {
     validationCode: string
   }
 
-  export type PurchaseOrder = & Cart & {
+  export type PurchaseOrder = Cart & {
     orderNumber: string,
     expirationDate: Date,
   }

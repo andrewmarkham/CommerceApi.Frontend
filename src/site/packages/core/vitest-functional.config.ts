@@ -5,6 +5,7 @@ import { loadEnv } from 'vite';
 export default defineConfig({
   test: {
     include: ['tests/functional/**/*.test.ts'],
+    setupFiles: ['vitest-localstorage-mock'],
     env: loadEnv('test', process.cwd())
   },
   resolve: {

@@ -14,7 +14,8 @@ import { HttpError } from "./types";
  */
 async function post<T>(url: string, body: any, token: string, customerContext: string, cache: boolean = false) : Promise<T | HttpError | void> { 
     
-    const error: HttpError = {} as HttpError;
+    const error: HttpError = { code: "400", message: "Bad Request" };
+
 
     const response = await fetch(url, {
       method: "POST",
@@ -27,8 +28,9 @@ async function post<T>(url: string, body: any, token: string, customerContext: s
       cache: cache ? 'force-cache' : 'no-store',
       body: JSON.stringify(body)
     }).catch((e) => {
-      error.code = e.code;
-      error.message = e.message;
+      error.code = e?.code ?? "NETWORK_ERROR";
+      error.message = e?.message ?? "Request failed";
+      return undefined;
     }); 
 
     return await parseResponse(response, error);
@@ -47,7 +49,7 @@ async function post<T>(url: string, body: any, token: string, customerContext: s
    */
   async function put<T>(url: string, body: any, token: string, customerContext: string, cache: boolean = false) : Promise<T | HttpError | void> { 
     
-    const error: HttpError = {} as HttpError;
+    const error: HttpError = { code: "400", message: "Bad Request" };
 
     const response = await fetch(url, {
       method: "PUT",
@@ -60,8 +62,9 @@ async function post<T>(url: string, body: any, token: string, customerContext: s
       cache: cache ? 'force-cache' : 'no-store',
       body: JSON.stringify(body)
     }).catch((e) => {
-      error.code = e.code;
-      error.message = e.message;
+      error.code = e?.code ?? "NETWORK_ERROR";
+      error.message = e?.message ?? "Request failed";
+      return undefined;
     }); 
   
     return await parseResponse(response, error);
@@ -79,7 +82,7 @@ async function post<T>(url: string, body: any, token: string, customerContext: s
    */
   async function patch<T>(url: string, body: any, token: string, customerContext: string) : Promise<T | HttpError | void> { 
     
-    const error: HttpError = {} as HttpError;
+    const error: HttpError = { code: "400", message: "Bad Request" };
 
     const response = await fetch(url, {
       method: "PATCH",
@@ -91,23 +94,26 @@ async function post<T>(url: string, body: any, token: string, customerContext: s
       },
       body: JSON.stringify(body)
     }).catch((e) => {
-      error.code = e.code;
-      error.message = e.message;
+      error.code = e?.code ?? "NETWORK_ERROR";
+      error.message = e?.message ?? "Request failed";
+      return undefined;
     }); 
   
     return await parseResponse(response, error);
   }
   async function get<T>(url: string, token: string, customerContext?: string) : Promise<T | HttpError | void> { 
     
-    const error: HttpError = {} as HttpError;
+    const error: HttpError = { code: "400", message: "Bad Request" };
+
     const response = await fetch(url, {
       headers: {
         "X-Customer-Context": customerContext ?? "",
         "Authorization": `Bearer ${token}`
       }
     }).catch((e) => {
-      error.code = e.code;
-      error.message = e.message;
+      error.code = e?.code ?? "NETWORK_ERROR";
+      error.message = e?.message ?? "Request failed";
+      return undefined;
     }); 
   
     return await parseResponse(response, error);
@@ -124,7 +130,8 @@ async function post<T>(url: string, body: any, token: string, customerContext: s
    */
   async function remove<T>(url: string, token: string, customerContext?: string) : Promise<T | HttpError | void> { 
     
-    const error: HttpError = {} as HttpError;
+    const error: HttpError = { code: "400", message: "Bad Request" };
+
     const response = await fetch(url, {
       method: "DELETE",
       headers: {
@@ -132,26 +139,22 @@ async function post<T>(url: string, body: any, token: string, customerContext: s
         "Authorization": `Bearer ${token}`
       }
     }).catch((e) => {
-      error.code = e.code;
-      error.message = e.message;
+      error.code = e?.code ?? "NETWORK_ERROR";
+      error.message = e?.message ?? "Request failed";
+      return undefined;
     }); 
   
     return await parseResponse(response, error);
   }
   
-  async function parseResponse<T>(response: Response | void, error: HttpError) : Promise<T | HttpError | void> {
-
-    if (response && "ok" in response) {
-      if (response?.ok) {
-        if (response.body) {
-          return await response.json() as T;
-        }
-      } else {
-        return { code: response.status.toString(), message: response.statusText } as HttpError;
-      }
-    } else {
-      return error;
+  async function parseResponse<T>(response: Response | void, error: HttpError): Promise<T | HttpError> {
+    if (!response) return error;
+    if (!response.ok) return { code: response.status.toString(), message: response.statusText };
+    try {
+      return (await response.json()) as T;
+    } catch {
+      return { code: "400", message: "Bad Request" };
     }
   }
-
+  
   export { post, put, patch, get, remove };

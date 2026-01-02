@@ -1,8 +1,8 @@
-export function decodeJwt(token: string): any {
-  const tokenArray = token.split('.')
-  return JSON.parse(atob(tokenArray[1]));
+export function decodeJwt(token: string): any | null {
+  const parts = token?.split(".");
+  if (!parts || parts.length < 2) return null;
+  return safeDecodeSegment(parts[1]);
 }
-
 /**
  * Checks if a given JWT token has expired.
  *
@@ -10,15 +10,18 @@ export function decodeJwt(token: string): any {
  * @returns `true` if the token is empty, undefined, or expired; otherwise, `false`.
  */
 export function hasTokenExpired(token: string): boolean {
-  
-  if (isEmptyOrUndefined(token)) {
-    console.log("TOKEN IS EMPTY OR UNDEFINED: ");
-    return true;
-  }
-  const decodedToken = decodeJwt(token);
-  return Math.floor(Date.now() / 1000) >= decodedToken?.exp;
+  if (!token?.trim()) return true;
+  const decoded = decodeJwt(token);
+  if (!decoded?.exp || typeof decoded.exp !== "number") return true;
+  return Math.floor(Date.now() / 1000) >= decoded.exp;
 }
 
-function isEmptyOrUndefined(str: string | undefined): boolean {
-  return !str || str.trim() === '';
+function safeDecodeSegment(segment: string): any | null {
+  try {
+    const normalized = segment.replace(/-/g, "+").replace(/_/g, "/");
+    const padded = normalized + "=".repeat((4 - (normalized.length % 4)) % 4);
+    return JSON.parse(atob(padded));
+  } catch {
+    return null;
+  }
 }

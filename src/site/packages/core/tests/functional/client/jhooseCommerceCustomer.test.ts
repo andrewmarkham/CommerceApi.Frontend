@@ -21,7 +21,7 @@ describe('JhooseCommerceCustomer', async () => {
 
         const auth0Token = btoa(`${auth0ClientId}:${auth0ClientSecret}`);
         token = await Auth0Login(auth0Url, auth0Token, username, password);
-    
+        console.log(username)
         var auth = new JhooseCommerceAuthentication(endpoint, token);
         var customerContext = await auth.getCustomerContext() as CustomerContextResponse;
     
@@ -51,9 +51,11 @@ describe('JhooseCommerceCustomer', async () => {
     it('should update customer', async () => {
          
         const customerResponse = await customerService.getCustomer() as CustomerResponse;
+        console.log(customerResponse.customer);
         customerResponse.customer!.firstName = 'John';
 
         const response = await customerService.updateCustomer(customerResponse.customer!) as CustomerResponse;
+        console.log(response);
         expect(response.customer?.firstName).toEqual('John');
     });
 
