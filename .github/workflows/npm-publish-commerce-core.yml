@@ -21,6 +21,8 @@ jobs:
           scope: '@jhoose-commerce'
         if: github.ref == 'refs/heads/main'
       - run: npm ci
+        working-directory: ./src/site
+      - run: npm ci
         working-directory: ./src/site/packages/core
       - run: npm publish --provenance --access public
         working-directory: ./src/site/packages/core
