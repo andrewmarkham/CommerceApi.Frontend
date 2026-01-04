@@ -23,7 +23,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           # Defaults to the user or organization that owns the workflow file
           scope: '@jhoose-commerce'
-          cache: 'yarn'
+
       - name: Enable Corepack (Yarn 4)
         run: |
             corepack enable
