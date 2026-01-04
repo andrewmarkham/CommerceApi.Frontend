@@ -26,5 +26,3 @@ jobs:
         working-directory: ./src/site/packages/core
       - run: npm publish --provenance --access public
         working-directory: ./src/site/packages/core
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_access }}
