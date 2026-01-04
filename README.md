@@ -61,7 +61,7 @@ See [Markets](./docs/markets.md)
 ## API Documentation
 
 ### Customer Rest API Layer
-See [Customer Rest API](./docs/customerRestapi.md)
+See [Customer Rest API](https://github.com/andrewmarkham/CommerceApi/blob/main/docs/customerRestapi.md)
 
 ### Javascript Customer API Layer
 See [Javascript Customer API Layer](./docs/javascriptapi.md)
