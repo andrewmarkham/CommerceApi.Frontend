@@ -20,7 +20,8 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@jhoose-commerce'
         if: github.ref == 'refs/heads/main'
-      - run: npm i
+      - run: npm ci
+        working-directory: ./src/site/packages/core
       - run: npm publish --provenance --access public
         working-directory: ./src/site/packages/core
         env:
