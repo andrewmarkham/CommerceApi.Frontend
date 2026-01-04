@@ -55,7 +55,10 @@ See [Authentication](./docs/authentication.md)
 See [Markets](./docs/markets.md)
 
 ### Extensibility
+Feature [Extensibility](https://github.com/andrewmarkham/CommerceApi/issues/2)
 
+---
+## Getting Started
 
 ---
 ## API Documentation
