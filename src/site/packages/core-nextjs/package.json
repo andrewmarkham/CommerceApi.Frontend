@@ -19,11 +19,9 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "react": ">=19.0.0",
+    "@jhoose-commerce/core": "^1.0.1",
     "next": ">=15.2.4",
-    "@jhoose-commerce/core": "^1.0.1"
-  },
-  "dependencies": {
+    "react": ">=19.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.27.0",

@@ -18,14 +18,13 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "stripe": "^18",
+    "@jhoose-commerce/components": "^1.0.7",
+    "@jhoose-commerce/core": "^1.0.1",
     "react": ">=19.0.0",
     "react-dom": "^19.0.0",
-    "@jhoose-commerce/core": "^1.0.1",
-    "@jhoose-commerce/components": "^1.0.7"
+    "stripe": "^18"
   },
   "devDependencies": {
-
     "@types/react": "^19.1.1",
     "@typescript-eslint/eslint-plugin": "^8.29.1",
     "@typescript-eslint/parser": "^8.29.1",
@@ -42,9 +41,6 @@
     "typescript": "^5.8.3",
     "vite": "^6.2.6",
     "vite-plugin-dts": "^4.5.3"
-  },
-  "dependencies": {
-
   },
   "msw": {
     "workerDirectory": [
