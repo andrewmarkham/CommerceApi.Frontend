@@ -1,5 +1,9 @@
 name: Publish jhoose commerce core package
 on:
+  push:
+    branches: [ main, release/* ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
   release:
     types: [published]
@@ -15,14 +19,14 @@ jobs:
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
           # Defaults to the user or organization that owns the workflow file
           scope: '@jhoose-commerce'
         if: github.ref == 'refs/heads/main'
       - run: npm ci
         working-directory: ./src/site
-      - run: npm ci
+      - run: npm i
         working-directory: ./src/site/packages/core
       - run: npm publish --provenance --access public
         working-directory: ./src/site/packages/core
