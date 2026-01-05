@@ -1,7 +1,15 @@
 {
   "name": "@jhoose-commerce/core-nextjs",
   "version": "1.0.9",
-  "description": "",
+  "description": "Extends the Jhoose Commerce core package with Next.js specific functionality",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewmarkham/CommerceApi.Frontend/tree/main/src/site/packages/core-nextjs"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewmarkham/CommerceApi.Frontend/issues"
+  },
+  "homepage": "https://github.com/andrewmarkham/CommerceApi.Frontend/blob/main/src/site/packages/core-nextjs/README.md",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -16,7 +24,7 @@
     "build": "tsc && vite build",
     "doc": "typedoc ./src/index.ts"
   },
-  "author": "",
+  "author": "Andrew Markham",
   "license": "ISC",
   "peerDependencies": {
     "@jhoose-commerce/core": "^1.0.1",

@@ -1,7 +1,15 @@
 {
   "name": "@jhoose-commerce/components",
   "version": "1.0.8",
-  "description": "",
+  "description": "React components for Jhoose Commerce",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewmarkham/CommerceApi.Frontend/tree/main/src/site/packages/components"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewmarkham/CommerceApi.Frontend/issues"
+  },
+  "homepage": "https://github.com/andrewmarkham/CommerceApi.Frontend/blob/main/src/site/packages/components/README.md",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -18,7 +26,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "author": "",
+  "author": "Andrew Markham",
   "license": "ISC",
   "peerDependencies": {
     "react": ">=19.0.0",

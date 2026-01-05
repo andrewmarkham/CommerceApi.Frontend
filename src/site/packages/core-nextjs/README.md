@@ -1,0 +1,1 @@
+# Jhoose Commerce Core Javascript API - Next.JS extensions
