@@ -1,6 +1,6 @@
 {
   "name": "@jhoose-commerce/core",
-  "version": "1.0.2",
+  "version": "1.0.10",
   "description": "Jhoose Commerce core package, providing a javasript SDK for interacting with the Jhoose Commerce API",
   "repository": {
     "type": "git",

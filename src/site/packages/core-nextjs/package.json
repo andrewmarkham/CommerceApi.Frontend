@@ -1,6 +1,6 @@
 {
   "name": "@jhoose-commerce/core-nextjs",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Extends the Jhoose Commerce core package with Next.js specific functionality",
     "repository": {
     "type": "git",
